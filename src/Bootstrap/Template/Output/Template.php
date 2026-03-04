@@ -98,7 +98,7 @@ class Template extends SwapTags
             }
         }
 
-        print json_encode($this->swaptags);
+        print json_encode($this->swaptags, JSON_UNESCAPED_UNICODE);
     }
     public function renderPage(): void
     {
