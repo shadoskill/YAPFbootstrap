@@ -82,12 +82,12 @@ abstract class Switchboard extends FunctionHelper
         $use_class = $this->findMasterClass();
         if ($use_class === null) {
             $this->addError("Unsupported request");
+            http_response_code(501);
             print json_encode([
                 "status" => false,
                 "message" => "[" . $this->loadingModule . " | "
                     . $this->loadingArea . " | " . $this->config->getPage() . "] Unsupported",
             ]);
-            http_response_code(501);
             return;
         }
 
